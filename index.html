@@ -1,0 +1,3022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="Ibrahim Mukhtar Saidu — Cybersecurity Analyst, Security Researcher, SOC enthusiast and founder of CYBERNOVA AI.">
+
+    <meta name="author"
+          content="Ibrahim Mukhtar Saidu">
+
+    <meta name="theme-color"
+          content="#050b14">
+
+    <title>
+        Ibrahim Mukhtar Saidu | Cybersecurity Analyst
+    </title>
+
+    <style>
+
+        /* =========================================================
+           GLOBAL
+        ========================================================= */
+
+        :root {
+            --bg: #050b14;
+            --bg-secondary: #08111f;
+            --panel: rgba(10, 22, 38, 0.82);
+            --panel-solid: #0b1728;
+            --border: rgba(56, 189, 248, 0.18);
+
+            --cyan: #22d3ee;
+            --blue: #38bdf8;
+            --green: #34d399;
+
+            --text: #f1f5f9;
+            --muted: #94a3b8;
+            --muted-light: #cbd5e1;
+
+            --shadow:
+                0 20px 60px rgba(0, 0, 0, 0.35);
+
+            --radius: 18px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family:
+                Inter,
+                ui-sans-serif,
+                system-ui,
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at 20% 10%,
+                    rgba(34, 211, 238, 0.09),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 80% 20%,
+                    rgba(56, 189, 248, 0.07),
+                    transparent 25%
+                ),
+
+                var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.7;
+
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        ::selection {
+            background: rgba(34, 211, 238, 0.3);
+            color: white;
+        }
+
+
+        /* =========================================================
+           BACKGROUND GRID
+        ========================================================= */
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+
+            background-image:
+                linear-gradient(
+                    rgba(56, 189, 248, 0.035) 1px,
+                    transparent 1px
+                ),
+
+                linear-gradient(
+                    90deg,
+                    rgba(56, 189, 248, 0.035) 1px,
+                    transparent 1px
+                );
+
+            background-size: 50px 50px;
+
+            pointer-events: none;
+
+            z-index: -2;
+        }
+
+        body::after {
+            content: "";
+
+            position: fixed;
+
+            width: 500px;
+            height: 500px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(34, 211, 238, 0.08),
+                    transparent 70%
+                );
+
+            top: 25%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            pointer-events: none;
+
+            z-index: -1;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        header {
+            position: fixed;
+
+            top: 0;
+            left: 0;
+            right: 0;
+
+            z-index: 1000;
+
+            backdrop-filter: blur(18px);
+
+            background:
+                rgba(5, 11, 20, 0.78);
+
+            border-bottom:
+                1px solid rgba(148, 163, 184, 0.08);
+        }
+
+        .nav {
+            width: min(1180px, 92%);
+
+            margin: auto;
+
+            min-height: 76px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+        .brand {
+            display: flex;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.08em;
+
+            font-size: 14px;
+        }
+
+        .brand-mark {
+            width: 36px;
+            height: 36px;
+
+            display: grid;
+            place-items: center;
+
+            border-radius: 10px;
+
+            border:
+                1px solid rgba(34, 211, 238, 0.35);
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(34, 211, 238, 0.16),
+                    rgba(56, 189, 248, 0.05)
+                );
+
+            color: var(--cyan);
+
+            font-size: 17px;
+
+            box-shadow:
+                0 0 25px rgba(34, 211, 238, 0.08);
+        }
+
+        .nav-links {
+            display: flex;
+
+            align-items: center;
+
+            gap: 30px;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+
+            font-size: 14px;
+
+            transition:
+                color 0.25s ease,
+                transform 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyan);
+
+            transform: translateY(-1px);
+        }
+
+
+        /* =========================================================
+           CONTAINER
+        ========================================================= */
+
+        .container {
+            width: min(1180px, 92%);
+
+            margin: auto;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding:
+                130px 0
+                80px;
+        }
+
+        .hero-grid {
+            display: grid;
+
+            grid-template-columns:
+                1.2fr
+                0.8fr;
+
+            gap: 70px;
+
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding:
+                7px 13px;
+
+            border:
+                1px solid rgba(52, 211, 153, 0.2);
+
+            border-radius: 999px;
+
+            background:
+                rgba(52, 211, 153, 0.06);
+
+            color: var(--green);
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 0.1em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 22px;
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+
+            border-radius: 50%;
+
+            background: var(--green);
+
+            box-shadow:
+                0 0 12px rgba(52, 211, 153, 0.9);
+
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.45;
+                transform: scale(0.75);
+            }
+        }
+
+        .hero h1 {
+            font-size:
+                clamp(46px, 7vw, 82px);
+
+            line-height: 1.02;
+
+            letter-spacing: -0.055em;
+
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            background:
+                linear-gradient(
+                    90deg,
+                    var(--cyan),
+                    var(--blue),
+                    var(--green)
+                );
+
+            -webkit-background-clip: text;
+            background-clip: text;
+
+            color: transparent;
+        }
+
+        .hero h2 {
+            font-size:
+                clamp(20px, 3vw, 30px);
+
+            color: var(--muted-light);
+
+            font-weight: 500;
+
+            margin-bottom: 22px;
+        }
+
+        .hero-description {
+            max-width: 680px;
+
+            color: var(--muted);
+
+            font-size: 17px;
+
+            margin-bottom: 32px;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            gap: 14px;
+
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            gap: 9px;
+
+            padding:
+                12px 20px;
+
+            border-radius: 10px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition:
+                transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .button-primary {
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--cyan),
+                    var(--blue)
+                );
+
+            color: #041019;
+
+            box-shadow:
+                0 10px 30px rgba(34, 211, 238, 0.14);
+        }
+
+        .button-primary:hover {
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 15px 40px rgba(34, 211, 238, 0.24);
+        }
+
+        .button-secondary {
+            border:
+                1px solid var(--border);
+
+            background:
+                rgba(15, 30, 48, 0.5);
+
+            color: var(--text);
+        }
+
+        .button-secondary:hover {
+            transform: translateY(-3px);
+
+            border-color:
+                rgba(34, 211, 238, 0.35);
+
+            background:
+                rgba(34, 211, 238, 0.07);
+        }
+
+
+        /* =========================================================
+           PROFILE CARD
+        ========================================================= */
+
+        .profile-wrapper {
+            position: relative;
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+        .profile-card {
+            position: relative;
+
+            width: min(360px, 90vw);
+
+            padding: 18px;
+
+            border:
+                1px solid rgba(56, 189, 248, 0.18);
+
+            border-radius: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(14, 32, 52, 0.9),
+                    rgba(5, 14, 26, 0.9)
+                );
+
+            box-shadow:
+                var(--shadow);
+
+            overflow: hidden;
+        }
+
+        .profile-card::before {
+            content: "";
+
+            position: absolute;
+
+            inset: -2px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(34, 211, 238, 0.25),
+                    transparent 35%,
+                    transparent 65%,
+                    rgba(52, 211, 153, 0.18)
+                );
+
+            pointer-events: none;
+        }
+
+        .profile-image-container {
+            position: relative;
+
+            aspect-ratio: 1 / 1;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            background: #0b1728;
+        }
+
+        .profile-image-container::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    transparent 60%,
+                    rgba(5, 11, 20, 0.5)
+                );
+
+            pointer-events: none;
+        }
+
+        .profile-photo {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+        }
+
+        .profile-info {
+            position: relative;
+
+            padding:
+                20px 6px 4px;
+        }
+
+        .profile-name {
+            font-size: 19px;
+
+            font-weight: 800;
+
+            margin-bottom: 4px;
+        }
+
+        .profile-role {
+            color: var(--cyan);
+
+            font-size: 13px;
+
+            font-weight: 600;
+        }
+
+
+        /* =========================================================
+           TERMINAL
+        ========================================================= */
+
+        .terminal {
+            margin-top: 30px;
+
+            border:
+                1px solid rgba(56, 189, 248, 0.12);
+
+            border-radius: 15px;
+
+            background:
+                rgba(4, 12, 22, 0.85);
+
+            overflow: hidden;
+
+            max-width: 680px;
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .terminal-bar {
+            height: 34px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            padding: 0 12px;
+
+            border-bottom:
+                1px solid rgba(148, 163, 184, 0.07);
+
+            background:
+                rgba(255, 255, 255, 0.02);
+        }
+
+        .terminal-dot {
+            width: 8px;
+            height: 8px;
+
+            border-radius: 50%;
+
+            background: #475569;
+        }
+
+        .terminal-body {
+            padding:
+                16px 18px;
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size: 12px;
+
+            color: #94a3b8;
+        }
+
+        .terminal-green {
+            color: var(--green);
+        }
+
+        .terminal-cyan {
+            color: var(--cyan);
+        }
+
+
+        /* =========================================================
+           SECTIONS
+        ========================================================= */
+
+        section {
+            padding:
+                110px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 48px;
+        }
+
+        .section-label {
+            color: var(--cyan);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            letter-spacing: 0.14em;
+
+            text-transform: uppercase;
+
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-size:
+                clamp(32px, 5vw, 48px);
+
+            line-height: 1.1;
+
+            letter-spacing: -0.04em;
+
+            margin-bottom: 14px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+
+            max-width: 700px;
+
+            font-size: 16px;
+        }
+
+
+        /* =========================================================
+           ABOUT
+        ========================================================= */
+
+        .about-grid {
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 24px;
+        }
+
+        .glass-card {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(12, 28, 47, 0.75),
+                    rgba(7, 17, 30, 0.72)
+                );
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            padding: 30px;
+
+            box-shadow:
+                var(--shadow);
+        }
+
+        .glass-card h3 {
+            font-size: 19px;
+
+            margin-bottom: 13px;
+        }
+
+        .glass-card p {
+            color: var(--muted);
+
+            font-size: 15px;
+        }
+
+        .focus-list {
+            display: grid;
+
+            grid-template-columns:
+                1fr
+                1fr;
+
+            gap: 12px;
+
+            margin-top: 20px;
+        }
+
+        .focus-item {
+            padding:
+                13px;
+
+            border:
+                1px solid rgba(148, 163, 184, 0.09);
+
+            border-radius: 10px;
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            color: var(--muted-light);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           SKILLS
+        ========================================================= */
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 16px;
+        }
+
+        .skill-card {
+            padding: 22px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            background:
+                rgba(10, 23, 39, 0.65);
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+
+            border-color:
+                rgba(34, 211, 238, 0.35);
+        }
+
+        .skill-icon {
+            font-size: 25px;
+
+            margin-bottom: 14px;
+        }
+
+        .skill-card h3 {
+            font-size: 16px;
+
+            margin-bottom: 7px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+        /* =========================================================
+           PROJECTS
+        ========================================================= */
+
+        .project-controls {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 9px;
+
+            margin-bottom: 30px;
+        }
+
+        .filter-button {
+            border:
+                1px solid rgba(148, 163, 184, 0.12);
+
+            background:
+                rgba(255, 255, 255, 0.025);
+
+            color: var(--muted);
+
+            padding:
+                9px 14px;
+
+            border-radius: 999px;
+
+            cursor: pointer;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            transition:
+                all 0.2s ease;
+        }
+
+        .filter-button:hover,
+        .filter-button.active {
+            color: #031019;
+
+            background: var(--cyan);
+
+            border-color: var(--cyan);
+        }
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 18px;
+        }
+
+        .project-card {
+            display: flex;
+
+            flex-direction: column;
+
+            min-height: 300px;
+
+            padding: 25px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(12, 27, 45, 0.78),
+                    rgba(6, 15, 27, 0.78)
+                );
+
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 130px;
+            height: 130px;
+
+            right: -70px;
+            top: -70px;
+
+            border-radius: 50%;
+
+            background:
+                rgba(34, 211, 238, 0.08);
+        }
+
+        .project-card:hover {
+            transform: translateY(-6px);
+
+            border-color:
+                rgba(34, 211, 238, 0.32);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.28);
+        }
+
+        .project-number {
+            color:
+                rgba(34, 211, 238, 0.65);
+
+            font-family:
+                "Courier New",
+                monospace;
+
+            font-size: 12px;
+
+            margin-bottom: 15px;
+        }
+
+        .project-card h3 {
+            font-size: 18px;
+
+            line-height: 1.3;
+
+            margin-bottom: 11px;
+        }
+
+        .project-card p {
+            color: var(--muted);
+
+            font-size: 13px;
+
+            flex: 1;
+        }
+
+        .project-tags {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 6px;
+
+            margin:
+                18px 0;
+        }
+
+        .tag {
+            font-size: 10px;
+
+            font-weight: 700;
+
+            color: var(--cyan);
+
+            border:
+                1px solid rgba(34, 211, 238, 0.13);
+
+            background:
+                rgba(34, 211, 238, 0.045);
+
+            padding:
+                5px 8px;
+
+            border-radius: 6px;
+        }
+
+        .project-link {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 7px;
+
+            color: var(--muted-light);
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+            transition:
+                color 0.2s ease;
+        }
+
+        .project-link:hover {
+            color: var(--cyan);
+        }
+
+
+        /* =========================================================
+           STATS
+        ========================================================= */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 15px;
+
+            margin-top: 25px;
+        }
+
+        .stat {
+            padding: 22px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius:
+                var(--radius);
+
+            background:
+                rgba(10, 23, 39, 0.55);
+
+            text-align: center;
+        }
+
+        .stat strong {
+            display: block;
+
+            font-size: 30px;
+
+            color: var(--cyan);
+
+            line-height: 1.2;
+        }
+
+        .stat span {
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+
+        /* =========================================================
+           CONTACT
+        ========================================================= */
+
+        .contact-box {
+            text-align: center;
+
+            padding:
+                60px 30px;
+
+            border:
+                1px solid rgba(34, 211, 238, 0.17);
+
+            border-radius:
+                24px;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    rgba(34, 211, 238, 0.07),
+                    transparent 60%
+                ),
+
+                rgba(8, 20, 34, 0.75);
+
+            box-shadow:
+                var(--shadow);
+        }
+
+        .contact-box h2 {
+            font-size:
+                clamp(30px, 5vw, 46px);
+
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: var(--muted);
+
+            max-width: 650px;
+
+            margin:
+                0 auto 28px;
+        }
+
+        .contact-links {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        footer {
+            border-top:
+                1px solid rgba(148, 163, 184, 0.07);
+
+            padding:
+                30px 0;
+
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        .footer-inner {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 20px;
+        }
+
+        .footer-brand {
+            color: var(--muted-light);
+
+            font-weight: 700;
+        }
+
+
+        /* =========================================================
+           SCROLL REVEAL
+        ========================================================= */
+
+        .reveal {
+            opacity: 0;
+
+            transform: translateY(25px);
+
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 1000px) {
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero-description,
+            .terminal {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .profile-wrapper {
+                order: -1;
+            }
+
+            .skills-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .projects-grid {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 720px) {
+
+            .nav {
+                min-height: 65px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                padding-top: 105px;
+            }
+
+            section {
+                padding:
+                    80px 0;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+
+            .focus-list {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 450px) {
+
+            .hero h1 {
+                font-size: 44px;
+            }
+
+            .profile-card {
+                width: 280px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .button {
+                width: 100%;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- =============================================================
+     NAVIGATION
+============================================================= -->
+
+<header>
+
+    <div class="nav">
+
+        <a href="#home" class="brand">
+
+            <span class="brand-mark">
+                &lt;/&gt;
+            </span>
+
+            IBRAHIM.M.S
+
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="#about">About</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#contact">Contact</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =============================================================
+     HERO
+============================================================= -->
+
+<main>
+
+<section id="home" class="hero">
+
+    <div class="container">
+
+        <div class="hero-grid">
+
+
+            <div>
+
+                <div class="eyebrow">
+
+                    <span class="status-dot"></span>
+
+                    CYBERSECURITY • SOC • SECURITY RESEARCH
+
+                </div>
+
+
+                <h1>
+
+                    Ibrahim
+                    <span>Mukhtar Saidu</span>
+
+                </h1>
+
+
+                <h2>
+                    Cybersecurity Analyst & Security Researcher
+                </h2>
+
+
+                <p class="hero-description">
+
+                    I build practical cybersecurity tools, detection
+                    laboratories, threat-hunting workflows and security
+                    automation projects focused on real-world defensive
+                    security operations.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#projects"
+                        class="button button-primary"
+                    >
+                        View Security Projects →
+                    </a>
+
+                    <a
+                        href="https://github.com/ibrahim-mukhtar-saidu"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-secondary"
+                    >
+                        GitHub Profile
+                    </a>
+
+                </div>
+
+
+                <div class="terminal">
+
+                    <div class="terminal-bar">
+
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+
+                    </div>
+
+                    <div class="terminal-body">
+
+                        <span class="terminal-green">
+                            ibrahim@cybernova
+                        </span>:~$
+
+                        whoami
+
+                        <br>
+
+                        <span class="terminal-cyan">
+                            Cybersecurity Analyst
+                        </span>
+
+                        <br><br>
+
+                        <span class="terminal-green">
+                            ibrahim@cybernova
+                        </span>:~$
+
+                        skills --list
+
+                        <br>
+
+                        Python | Linux | Networking |
+                        Threat Hunting | SOC | Security Automation
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-wrapper">
+
+                <div class="profile-card">
+
+                    <div class="profile-image-container">
+
+                        <img
+                            src="assets/images/ibrahim.jpg"
+                            alt="Ibrahim Mukhtar Saidu"
+                            class="profile-photo"
+                        >
+
+                    </div>
+
+                    <div class="profile-info">
+
+                        <div class="profile-name">
+                            Ibrahim Mukhtar Saidu
+                        </div>
+
+                        <div class="profile-role">
+                            Cybersecurity Analyst
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     ABOUT
+============================================================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                01 / About
+            </div>
+
+            <h2>
+                Building security skills through real projects.
+            </h2>
+
+            <p>
+                My portfolio is centered around practical cybersecurity
+                development, defensive security operations and hands-on
+                security research.
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="glass-card reveal">
+
+                <h3>
+                    Who I Am
+                </h3>
+
+                <p>
+
+                    I am Ibrahim Mukhtar Saidu, a cybersecurity enthusiast
+                    focused on developing practical capabilities across
+                    security operations, threat hunting, vulnerability
+                    analysis, Linux security, networking and security
+                    automation.
+
+                </p>
+
+                <br>
+
+                <p>
+
+                    My approach is project-driven: instead of only learning
+                    cybersecurity theory, I build tools and laboratories
+                    that demonstrate how security concepts can be applied
+                    in realistic environments.
+
+                </p>
+
+            </div>
+
+
+            <div class="glass-card reveal">
+
+                <h3>
+                    Security Focus
+                </h3>
+
+                <p>
+                    Areas I am actively developing include:
+                </p>
+
+
+                <div class="focus-list">
+
+                    <div class="focus-item">
+                        🛡️ SOC Operations
+                    </div>
+
+                    <div class="focus-item">
+                        🔎 Threat Hunting
+                    </div>
+
+                    <div class="focus-item">
+                        📊 SIEM & Detection
+                    </div>
+
+                    <div class="focus-item">
+                        🦠 Malware Analysis
+                    </div>
+
+                    <div class="focus-item">
+                        🌐 Network Security
+                    </div>
+
+                    <div class="focus-item">
+                        🐧 Linux Security
+                    </div>
+
+                    <div class="focus-item">
+                        ☁️ Cloud Security
+                    </div>
+
+                    <div class="focus-item">
+                        🔐 Identity & Access
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="stats reveal">
+
+            <div class="stat">
+
+                <strong>18</strong>
+
+                <span>
+                    Security Projects
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>10+</strong>
+
+                <span>
+                    Security Domains
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>3+</strong>
+
+                <span>
+                    Security Tools
+                </span>
+
+            </div>
+
+            <div class="stat">
+
+                <strong>1</strong>
+
+                <span>
+                    Security-Focused Portfolio
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     SKILLS
+============================================================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                02 / Skills
+            </div>
+
+            <h2>
+                Technical capabilities.
+            </h2>
+
+            <p>
+                Technologies and cybersecurity disciplines represented
+                throughout my projects.
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    🐍
+                </div>
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Security automation, scanning, analysis,
+                    threat hunting and custom security tooling.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    🐧
+                </div>
+
+                <h3>
+                    Linux
+                </h3>
+
+                <p>
+                    Linux security, system auditing, command-line
+                    workflows and security environments.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    🔍
+                </div>
+
+                <h3>
+                    Threat Hunting
+                </h3>
+
+                <p>
+                    IOC analysis, log investigation, timeline analysis
+                    and defensive investigation workflows.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    📊
+                </div>
+
+                <h3>
+                    SIEM & Detection
+                </h3>
+
+                <p>
+                    Detection labs, security monitoring, log analysis
+                    and SOC-oriented investigation.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Networking
+                </h3>
+
+                <p>
+                    Network fundamentals, port scanning,
+                    network security and service analysis.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    🦠
+                </div>
+
+                <h3>
+                    Malware Analysis
+                </h3>
+
+                <p>
+                    File identification, hashing, entropy,
+                    IOC extraction and YARA-based analysis.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    ☁️
+                </div>
+
+                <h3>
+                    Cloud Security
+                </h3>
+
+                <p>
+                    Cloud security monitoring concepts and
+                    defensive security laboratory work.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <div class="skill-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Vulnerability Analysis
+                </h3>
+
+                <p>
+                    Vulnerability discovery, scanning and
+                    security assessment workflows.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     PROJECTS
+============================================================= -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-heading reveal">
+
+            <div class="section-label">
+                03 / Projects
+            </div>
+
+            <h2>
+                Security projects & laboratories.
+            </h2>
+
+            <p>
+                A collection of cybersecurity tools, security labs,
+                detection environments and research projects.
+                Every project links directly to its GitHub repository.
+            </p>
+
+        </div>
+
+
+        <div class="project-controls">
+
+            <button
+                class="filter-button active"
+                data-filter="all"
+            >
+                All
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="soc"
+            >
+                SOC / Detection
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="threat"
+            >
+                Threat Hunting
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="security"
+            >
+                Security Tools
+            </button>
+
+            <button
+                class="filter-button"
+                data-filter="labs"
+            >
+                Security Labs
+            </button>
+
+        </div>
+
+
+        <div class="projects-grid">
+
+
+            <!-- 01 -->
+
+            <article
+                class="project-card reveal"
+                data-category="labs"
+            >
+
+                <div class="project-number">
+                    PROJECT_01
+                </div>
+
+                <h3>
+                    CYBERNOVA Security Training
+                </h3>
+
+                <p>
+                    Cybersecurity training and learning project focused
+                    on developing practical security knowledge and
+                    hands-on skills.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Cybersecurity
+                    </span>
+
+                    <span class="tag">
+                        Training
+                    </span>
+
+                    <span class="tag">
+                        Security
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/cybernova-security-training"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 02 -->
+
+            <article
+                class="project-card reveal"
+                data-category="soc"
+            >
+
+                <div class="project-number">
+                    PROJECT_02
+                </div>
+
+                <h3>
+                    CYBERNOVA SIEM Detection Lab
+                </h3>
+
+                <p>
+                    Security monitoring and detection laboratory designed
+                    around SIEM concepts, security events and defensive
+                    investigation workflows.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        SIEM
+                    </span>
+
+                    <span class="tag">
+                        Detection
+                    </span>
+
+                    <span class="tag">
+                        SOC
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/cybernova-siem-detection-lab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 03 -->
+
+            <article
+                class="project-card reveal"
+                data-category="threat"
+            >
+
+                <div class="project-number">
+                    PROJECT_03
+                </div>
+
+                <h3>
+                    CYBERNOVA Threat Hunting Toolkit
+                </h3>
+
+                <p>
+                    Python-based threat hunting toolkit for IOC searching,
+                    log analysis, timeline building, hashing and
+                    security reporting.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        Threat Hunting
+                    </span>
+
+                    <span class="tag">
+                        IOC
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/cybernova-threat-hunting-toolkit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 04 -->
+
+            <article
+                class="project-card reveal"
+                data-category="security"
+            >
+
+                <div class="project-number">
+                    PROJECT_04
+                </div>
+
+                <h3>
+                    Linux Security Audit Toolkit
+                </h3>
+
+                <p>
+                    Security auditing toolkit focused on examining
+                    Linux systems and identifying potential security
+                    weaknesses.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Linux
+                    </span>
+
+                    <span class="tag">
+                        Auditing
+                    </span>
+
+                    <span class="tag">
+                        Security
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/linux-security-audit-toolkit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 05 -->
+
+            <article
+                class="project-card reveal"
+                data-category="labs"
+            >
+
+                <div class="project-number">
+                    PROJECT_05
+                </div>
+
+                <h3>
+                    CYBERNOVA Cloud Security Monitoring Lab
+                </h3>
+
+                <p>
+                    Cloud-focused security monitoring laboratory exploring
+                    defensive visibility, monitoring and security events.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Cloud
+                    </span>
+
+                    <span class="tag">
+                        Monitoring
+                    </span>
+
+                    <span class="tag">
+                        Security
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/cybernova-cloud-security-monitoring-lab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 06 -->
+
+            <article
+                class="project-card reveal"
+                data-category="security"
+            >
+
+                <div class="project-number">
+                    PROJECT_06
+                </div>
+
+                <h3>
+                    CYBERNOVA Malware Analysis Sandbox
+                </h3>
+
+                <p>
+                    Malware analysis project featuring file identification,
+                    hashing, entropy analysis, IOC extraction, YARA scanning
+                    and risk scoring.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Malware
+                    </span>
+
+                    <span class="tag">
+                        YARA
+                    </span>
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/cybernova-malware-analysis-sandbox"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 07 -->
+
+            <article
+                class="project-card reveal"
+                data-category="security"
+            >
+
+                <div class="project-number">
+                    PROJECT_07
+                </div>
+
+                <h3>
+                    Python Port Scanner
+                </h3>
+
+                <p>
+                    Python network port scanner capable of scanning
+                    configurable port ranges and generating scan reports.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Python
+                    </span>
+
+                    <span class="tag">
+                        Networking
+                    </span>
+
+                    <span class="tag">
+                        Scanning
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/python-port-scanner"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 08 -->
+
+            <article
+                class="project-card reveal"
+                data-category="soc"
+            >
+
+                <div class="project-number">
+                    PROJECT_08
+                </div>
+
+                <h3>
+                    CYBERNOVA Windows Security Monitoring Lab
+                </h3>
+
+                <p>
+                    Windows-focused security monitoring laboratory for
+                    exploring system events, security telemetry and
+                    defensive investigation.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Windows
+                    </span>
+
+                    <span class="tag">
+                        Monitoring
+                    </span>
+
+                    <span class="tag">
+                        SOC
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/cybernova-windows-security-monitoring-lab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 09 -->
+
+            <article
+                class="project-card reveal"
+                data-category="security"
+            >
+
+                <div class="project-number">
+                    PROJECT_09
+                </div>
+
+                <h3>
+                    Web Vulnerability Scanner
+                </h3>
+
+                <p>
+                    Security assessment project focused on identifying
+                    potential vulnerabilities in web applications.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Web Security
+                    </span>
+
+                    <span class="tag">
+                        Scanning
+                    </span>
+
+                    <span class="tag">
+                        Vulnerabilities
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/web-vulnerability-scanner"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 10 -->
+
+            <article
+                class="project-card reveal"
+                data-category="soc"
+            >
+
+                <div class="project-number">
+                    PROJECT_10
+                </div>
+
+                <h3>
+                    SOC Log Analyzer
+                </h3>
+
+                <p>
+                    Security operations project focused on analyzing
+                    logs and identifying potentially suspicious activity.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        SOC
+                    </span>
+
+                    <span class="tag">
+                        Logs
+                    </span>
+
+                    <span class="tag">
+                        Analysis
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/soc-log-analyzer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 11 -->
+
+            <article
+                class="project-card reveal"
+                data-category="soc"
+            >
+
+                <div class="project-number">
+                    PROJECT_11
+                </div>
+
+                <h3>
+                    Mini SIEM Lab
+                </h3>
+
+                <p>
+                    Compact security information and event management
+                    laboratory demonstrating core monitoring and
+                    detection concepts.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        SIEM
+                    </span>
+
+                    <span class="tag">
+                        SOC
+                    </span>
+
+                    <span class="tag">
+                        Detection
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/mini-sim-lab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 12 -->
+
+            <article
+                class="project-card reveal"
+                data-category="labs"
+            >
+
+                <div class="project-number">
+                    PROJECT_12
+                </div>
+
+                <h3>
+                    CYBERNOVA Identity & Access Security Lab
+                </h3>
+
+                <p>
+                    Security laboratory focused on identity, access
+                    controls and defensive authentication concepts.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        IAM
+                    </span>
+
+                    <span class="tag">
+                        Access
+                    </span>
+
+                    <span class="tag">
+                        Security
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/cybernova-identity-access-security-lab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 13 -->
+
+            <article
+                class="project-card reveal"
+                data-category="threat"
+            >
+
+                <div class="project-number">
+                    PROJECT_13
+                </div>
+
+                <h3>
+                    Threat Intelligence Analyzer
+                </h3>
+
+                <p>
+                    Threat intelligence project designed to analyze
+                    security indicators and support investigation workflows.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Threat Intel
+                    </span>
+
+                    <span class="tag">
+                        IOC
+                    </span>
+
+                    <span class="tag">
+                        Analysis
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/threat-intelligence-analyzer"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 14 -->
+
+            <article
+                class="project-card reveal"
+                data-category="security"
+            >
+
+                <div class="project-number">
+                    PROJECT_14
+                </div>
+
+                <h3>
+                    File Integrity Monitor
+                </h3>
+
+                <p>
+                    Security monitoring project designed around file
+                    integrity verification and detection of unexpected
+                    changes.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        FIM
+                    </span>
+
+                    <span class="tag">
+                        Monitoring
+                    </span>
+
+                    <span class="tag">
+                        Security
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/file-integrity-monitor"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 15 -->
+
+            <article
+                class="project-card reveal"
+                data-category="labs"
+            >
+
+                <div class="project-number">
+                    PROJECT_15
+                </div>
+
+                <h3>
+                    Incident Response Lab
+                </h3>
+
+                <p>
+                    Hands-on security laboratory focused on incident
+                    investigation, response workflows and defensive
+                    analysis.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Incident Response
+                    </span>
+
+                    <span class="tag">
+                        DFIR
+                    </span>
+
+                    <span class="tag">
+                        SOC
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/incident-response-lab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 16 -->
+
+            <article
+                class="project-card reveal"
+                data-category="security"
+            >
+
+                <div class="project-number">
+                    PROJECT_16
+                </div>
+
+                <h3>
+                    Vulnerability Scanner Lab
+                </h3>
+
+                <p>
+                    Security assessment laboratory exploring vulnerability
+                    discovery and scanning workflows.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        Vulnerability
+                    </span>
+
+                    <span class="tag">
+                        Scanning
+                    </span>
+
+                    <span class="tag">
+                        Security
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/vulnerability-scanner-lab"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 17 -->
+
+            <article
+                class="project-card reveal"
+                data-category="labs"
+            >
+
+                <div class="project-number">
+                    PROJECT_17
+                </div>
+
+                <h3>
+                    Cybersecurity Portfolio Profile
+                </h3>
+
+                <p>
+                    GitHub profile repository containing the public
+                    cybersecurity profile and professional project
+                    information.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        GitHub
+                    </span>
+
+                    <span class="tag">
+                        Portfolio
+                    </span>
+
+                    <span class="tag">
+                        Profile
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/ibrahim-mukhtar-saidu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+            <!-- 18 -->
+
+            <article
+                class="project-card reveal"
+                data-category="labs"
+            >
+
+                <div class="project-number">
+                    PROJECT_18
+                </div>
+
+                <h3>
+                    Ibrahim Mukhtar Saidu Portfolio
+                </h3>
+
+                <p>
+                    The GitHub repository powering this cybersecurity
+                    portfolio website.
+                </p>
+
+                <div class="project-tags">
+
+                    <span class="tag">
+                        HTML
+                    </span>
+
+                    <span class="tag">
+                        CSS
+                    </span>
+
+                    <span class="tag">
+                        Portfolio
+                    </span>
+
+                </div>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu/Ibrahim-mukhtar-saidu.github.io"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="project-link"
+                >
+                    View Repository →
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =============================================================
+     CONTACT
+============================================================= -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box reveal">
+
+            <div class="section-label">
+                04 / Contact
+            </div>
+
+            <h2>
+                Let's connect.
+            </h2>
+
+            <p>
+
+                Interested in cybersecurity, security operations,
+                threat hunting or security engineering? Feel free to
+                connect with me through email, GitHub or LinkedIn.
+
+            </p>
+
+
+            <div class="contact-links">
+
+                <a
+                    href="mailto:ibrahimmukhtarsaidu@gmail.com"
+                    class="button button-primary"
+                >
+                    Email Me
+                </a>
+
+                <a
+                    href="https://github.com/ibrahim-mukhtar-saidu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-secondary"
+                >
+                    GitHub
+                </a>
+
+                <a
+                    href="https://www.linkedin.com/in/ibrahim-mukhtar-saidu"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="button button-secondary"
+                >
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =============================================================
+     FOOTER
+============================================================= -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                Ibrahim Mukhtar Saidu
+            </div>
+
+            <div>
+                © 2026 • Cybersecurity Portfolio
+            </div>
+
+            <div>
+                CYBERNOVA AI
+            </div>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =============================================================
+     JAVASCRIPT
+============================================================= -->
+
+<script>
+
+    /* =========================================================
+       PROJECT FILTER
+    ========================================================= */
+
+    const filterButtons =
+        document.querySelectorAll(".filter-button");
+
+    const projectCards =
+        document.querySelectorAll(".project-card");
+
+
+    filterButtons.forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            const filter =
+                button.dataset.filter;
+
+
+            filterButtons.forEach(btn => {
+
+                btn.classList.remove("active");
+
+            });
+
+
+            button.classList.add("active");
+
+
+            projectCards.forEach(card => {
+
+                const category =
+                    card.dataset.category;
+
+
+                if (
+                    filter === "all" ||
+                    category === filter
+                ) {
+
+                    card.style.display = "flex";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+
+        });
+
+    });
+
+
+
+    /* =========================================================
+       SCROLL REVEAL
+    ========================================================= */
+
+    const revealElements =
+        document.querySelectorAll(".reveal");
+
+
+    const observer =
+        new IntersectionObserver(
+
+            entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("visible");
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+
+            {
+                threshold: 0.08
+            }
+
+        );
+
+
+    revealElements.forEach(element => {
+
+        observer.observe(element);
+
+    });
+
+
+
+    /* =========================================================
+       CURRENT YEAR
+    ========================================================= */
+
+    const year =
+        new Date().getFullYear();
+
+    const footer =
+        document.querySelector("footer");
+
+    if (footer) {
+
+        footer.innerHTML =
+            footer.innerHTML.replace(
+                "© 2026",
+                "© " + year
+            );
+
+    }
+
+</script>
+
+
+</body>
+</html>
